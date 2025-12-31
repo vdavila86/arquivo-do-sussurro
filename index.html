@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Arquivo do Sussurro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <div class="logo-container">
+                <h1 class="logo">Arquivo do Sussurro</h1>
+                <p class="subtitle">Nada aqui é ficção. Só foi esquecido.</p>
+            </div>
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="Buscar registros...">
+            </div>
+        </div>
+    </header>
+
+    <div class="container main-content">
+        <main>
+            <!-- Featured Record -->
+            <article class="featured-record">
+                <div class="record-header">
+                    <span class="badge">REGISTRO EM DESTAQUE</span>
+                    <h2>Relógios que Não Andam</h2>
+                </div>
+                <div class="record-meta">
+                    <span><strong>Classificação:</strong> Registro recorrente</span>
+                    <span><strong>Origem:</strong> Fonte preservada</span>
+                    <span><strong>Período:</strong> ~2005</span>
+                </div>
+                <div class="record-tags">
+                    <span class="tag">Morte</span>
+                    <span class="tag">Tempo</span>
+                    <span class="tag">Ritual</span>
+                    <span class="tag">Paradoxo</span>
+                    <span class="tag">Luzídio</span>
+                </div>
+                <div class="archivist-note">
+                    <strong>[Nota do Arquivista]</strong> Este relato reaparece em meus registros a cada ciclo. Alguns nomes foram preservados contra minha própria vontade. Se você reconhece os eventos descritos, não foi coincidência que este arquivo encontrou você.
+                </div>
+                <div class="record-content" id="featuredContent">
+                    <p><span class="censored" data-text="Verônica D'Ávila"></span> é uma mulher de 40 anos presa no corpo de uma jovem de 19, resultado de um experimento ocultista catastrófico conduzido por sua própria família. Há duas décadas, os D'Ávila, renomados relojoeiros obcecados pela perfeição e pela imortalidade, tentaram manifestar um artefato capaz de controlar o fluxo do tempo. Quando o ritual saiu de controle e ameaçou consumir a vida de um grande amigo de <span class="censored" data-text="Verônica"></span>, ela descobriu que seus pais estavam dispostos a sacrificá-lo em nome do sucesso da pesquisa. Em um ato de rebeldia e desespero, ela interrompeu a cerimônia manipulando as forças da Morte, o que gerou um paradoxo temporal: <span class="censored" data-text="Verônica"></span> absorveu a estagnação do elemento, parando de envelhecer naquele exato segundo, enquanto seu amigo sofreu um envelhecimento acelerado, saltando décadas de vida em poucos instantes.</p>
+                    
+                    <p>Repudiada e escondida pela família, que a via apenas como uma prova viva de seu experimento distorcido, <span class="censored" data-text="Verônica"></span> fugiu para as ruas e, anos depois, acabou encontrando refúgio na Ordem. Hoje, ela mantém uma aparência urbana de duas décadas atrás, com sua jaqueta varsity e botas pesadas, escondendo uma personalidade madura, melancólica e extremamente metódica. Ela atua como uma investigadora que enxerga o paranormal como um mecanismo que precisa ser compreendido e contido, mantendo uma calma inabalável diante do horror, já que encara a própria existência como uma contagem regressiva para a imobilidade total. Sua palidez e o brilho não-natural de seus olhos são sinais claros de sua afinidade com a Morte, indicando que ela está lentamente se transformando em um Luzidio.</p>
+                    
+                    <p>Atualmente, o maior objetivo de <span class="censored" data-text="Verônica"></span> é cuidar de seu amigo, que agora está sob proteção institucional, enquanto busca uma maneira de interromper ou reverter o desgaste vital que ele ainda sofre. Ao mesmo tempo, ela vigia os passos da família D'Ávila, temendo que a ambição deles leve à repetição das atrocidades do passado. Se este registro deixar de estar disponível, considere isso uma confirmação, não uma falha.</p>
+                </div>
+            </article>
+
+            <!-- Other Records -->
+            <section class="records-section">
+                <h3>Outros Registros Catalogados</h3>
+                <div id="recordsList" class="records-list"></div>
+            </section>
+        </main>
+
+        <aside class="sidebar">
+            <!-- Categories -->
+            <div class="widget">
+                <h4>Categorias</h4>
+                <div class="tag-filter" id="tagFilter"></div>
+                <button id="clearFilter" class="clear-filter" style="display: none;">Limpar Filtro</button>
+            </div>
+
+            <!-- Most Accessed -->
+            <div class="widget">
+                <h4>Mais Acessados</h4>
+                <ul class="popular-list">
+                    <li>O Sinal da Estação</li>
+                    <li>Gravações da Enfermaria 7</li>
+                    <li>A Criança do Espelho Parado</li>
+                    <li>Precisão Fatal</li>
+                </ul>
+            </div>
+
+            <!-- Archivist Note -->
+            <div class="widget archivist-widget">
+                <h4>Nota do Arquivista</h4>
+                <p class="monospace">Alguns registros se atualizam sozinhos. Não sou eu quem os modifica. Se você está lendo isto, preste atenção nos detalhes que mudam entre visitas.</p>
+            </div>
+
+            <!-- Clock Widget -->
+            <div class="widget clock-widget">
+                <h4>Horário do Sistema</h4>
+                <div id="clockDisplay" class="clock-display"></div>
+                <p class="clock-note">Sincronizado. Por enquanto.</p>
+            </div>
+
+            <!-- Hidden Warning -->
+            <div class="widget warning-widget">
+                <p class="monospace small-text">Se você chegou aqui procurando alguém específico, talvez já tenha sido notado.</p>
+            </div>
+        </aside>
+    </div>
+
+    <!-- Modal -->
+    <div id="recordModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div id="modalBody"></div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>Alguns registros resistem mais que seus autores.</p>
+            <p class="small-text">Alguns links expiram sozinhos.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
